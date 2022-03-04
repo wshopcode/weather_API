@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER API</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity=
+    "sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"
+     referrerpolicy="no-referrer"></script>
+
+     
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="weather-container">
+        
+        <img class="icon">
+        <p class="weather"></p>
+        <p class="temp"></p>
+    </div>
+    
+
+<script>
+
+//var city = "Kampala"//
+
+var city = prompt("Search weather by City", "Enter City Here")
+
+$.getJSON("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&APPID=e09aef129fc60761da4e260ae7bf86c1", function(data){
+    console.log(data);
+
+    var icon = "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+    var temp = Math.floor(data.main.temp);
+    var weather = data.weather[0].description;
+
+    $('.icon').attr('src', icon);
+    $('.weather').append(weather);
+    $('.temp ').append(temp);
+});
+
+</script>
+</body>
+</html>

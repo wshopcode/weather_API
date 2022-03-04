@@ -1,0 +1,25 @@
+.weather-container{
+    background: #ccc;
+    text-align: center;
+}
+
+.weather{
+    font-size: 22px;
+    margin: 0;
+}
+
+.temp{
+    font-size: 60px;
+    margin: 0;
+    font-weight:bold;
+}
+
+.button-round{
+    border-radius:0 4pt 4pt 0 !important ;
+    padding: 0 8pt;
+    height: 24pt;
+    width: 90px;
+    background-color: #40484a;
+    border-color: #40484a;
+    color: #f2f2f2;
+}
